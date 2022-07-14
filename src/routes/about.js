@@ -1,7 +1,10 @@
+import { CssVarsProvider } from '@mui/joy/styles';
+import { customTheme } from '../customTheme';
+
 export default function About() {
   return (
-    <div style={{ padding: "1rem 0" }}>
+    <CssVarsProvider theme={customTheme}>
       <h2>About</h2>
-    </div>
+    </CssVarsProvider>
   );
 }

@@ -4,26 +4,6 @@ import Tab from "@mui/material/Tab";
 import { Box as JBox } from "@mui/joy";
 import { useNavigate } from "react-router-dom";
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <JBox sx={{ p: 3 }}>
-          {children}
-        </JBox>
-      )}
-    </div>
-  );
-}
-
 
 export default function BasicTabs(props) {
   const { tabs } = props;
@@ -55,11 +35,7 @@ export default function BasicTabs(props) {
           ))}
         </Tabs>
       </JBox>
-      {tabs.map((tab, index) => (
-        <TabPanel key={tab.url} value={value} index={index}>
-          {tabs[index].content}
-        </TabPanel>
-      ))}
+
     </JBox>
   );
 }

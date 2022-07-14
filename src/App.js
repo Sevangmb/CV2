@@ -30,9 +30,9 @@ export default function App() {
       <Router>
         <BasicTabs tabs={tabsDefinition} />
         <Routes>
-          <Route path="/about" />
-          <Route path="/expenses" />
-          <Route path="/invoices" />
+          <Route path="/about" element={<About />}/>
+          <Route path="/expenses" element={<Expenses />} />
+          <Route path="/invoices" element={<Invoices />} />
         </Routes>
       </Router>     
     </CssVarsProvider>   
