@@ -1,6 +1,9 @@
+import { deepmerge } from '@mui/utils';
 import { extendTheme } from '@mui/joy/styles';
+import { experimental_extendTheme as extendMuiTheme } from '@mui/material/styles';
 
-export const customTheme = extendTheme({
+const muiTheme = extendMuiTheme();
+const joyTheme = extendTheme({
   colorSchemes: {
     light: {
       palette: {
@@ -29,3 +32,4 @@ export const customTheme = extendTheme({
   },
 });
 
+export const customTheme = deepmerge(muiTheme, joyTheme);
