@@ -68,7 +68,7 @@ const joyTheme = extendTheme({
     },
   },
   fontFamily: {
-    body: "SF Pro Text, var(--gh-fontFamily-fallback)",
+    body: "roboto, system-ui, sans-serif",
   },
 });
 
