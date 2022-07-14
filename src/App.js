@@ -1,18 +1,21 @@
-import { Link } from "react-router-dom";
+import { CssVarsProvider } from '@mui/joy/styles';
+import { Link as RouterLink } from 'react-router-dom';
+import JoyLink from '@mui/joy/Link';
+import { Fragment } from 'react';
+import { customTheme } from './customTheme';
+
 
 export default function App() {
   return (
-    <div>
-      <h1>Bookkeeper</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
-      </nav>
-    </div>
+    <CssVarsProvider theme={customTheme}>
+      <Fragment>
+        <JoyLink component={RouterLink} to="/Invoices">
+          [Invoices]
+        </JoyLink>
+        <JoyLink component={RouterLink} to="/Expenses">
+          [Expenses]
+        </JoyLink>
+      </Fragment>
+    </CssVarsProvider>
   );
 }
