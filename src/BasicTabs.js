@@ -18,7 +18,12 @@ export default function BasicTabs(props) {
   };
 
   return (
-    <JBox sx={{ width: "100%" }}>
+    <JBox sx={{ 
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
       <JBox sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}

@@ -16,17 +16,17 @@ const muiTheme = extendMuiTheme({
   },
   typography: {
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
+    ].join(","),
   },
 });
 
@@ -71,6 +71,5 @@ const joyTheme = extendTheme({
     body: "roboto, system-ui, sans-serif",
   },
 });
-
 
 export const customTheme = deepmerge(muiTheme, joyTheme);
