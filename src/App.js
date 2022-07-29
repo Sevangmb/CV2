@@ -1,7 +1,7 @@
 import { CssVarsProvider } from '@mui/joy/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { customTheme } from './customTheme';
-import BasicTabs from './BasicTabs';
+import BasicTabs from './components/BasicTabs';
 import About from './routes/about';
 import Expenses from './routes/expenses';
 import Invoices from './routes/invoices';
