@@ -1,7 +1,7 @@
-import * as React from "react";
-import Chip from "@mui/material/Chip";
-import FaceIcon from "@mui/icons-material/Face";
-import Stack from "@mui/material/Stack";
+import * as React from 'react';
+import Chip from '@mui/material/Chip';
+import FaceIcon from '@mui/icons-material/Face';
+import Stack from '@mui/material/Stack';
 
 class Api extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Api extends React.Component {
   componentDidMount() {
     const that = this;
     const apiUrl =
-      "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/cv-xfzvw/service/cv/incoming_webhook/api?secret=cv";
+      'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/cv-xfzvw/service/cv/incoming_webhook/api?secret=cv';
     fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => {
@@ -37,18 +37,11 @@ class Api extends React.Component {
 
         {item.cast.map((castDetail, stackId) => (
           <Stack key={`api-${stackId}`} direction="row" spacing={1}>
-            <Chip
-              size="small"
-              icon={<FaceIcon />}
-              label={castDetail}
-              variant="outlined"
-            />
+            <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
 
-        <span key="{item.runtime.$numberInt}">
-          Diffusé {item.runtime.$numberInt} fois
-        </span>
+        <span key="{item.runtime.$numberInt}">Diffusé {item.runtime.$numberInt} fois</span>
       </div>
     ));
     return result;

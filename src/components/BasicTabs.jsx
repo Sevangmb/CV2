@@ -1,8 +1,8 @@
-import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { Box as JBox } from "@mui/joy";
-import { useNavigate } from "react-router-dom";
+import * as React from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { Box as JBox } from '@mui/joy';
+import { useNavigate } from 'react-router-dom';
 
 export default function BasicTabs(props) {
   const { tabs } = props;
@@ -19,18 +19,14 @@ export default function BasicTabs(props) {
   return (
     <JBox
       sx={{
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      <JBox sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
+      <JBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           {tabs.map((tab, index) => (
             <Tab
               key={tab.url}

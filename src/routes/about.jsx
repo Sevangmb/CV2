@@ -1,5 +1,5 @@
-import { CssVarsProvider } from "@mui/joy/styles";
-import customTheme from "../customTheme";
+import { CssVarsProvider } from '@mui/joy/styles';
+import customTheme from '../customTheme';
 
 export default function About() {
   return (

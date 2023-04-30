@@ -1,8 +1,8 @@
-import Api from "../components/Api";
+import Api from '../components/Api';
 
 export default function Expenses() {
   return (
-    <div style={{ padding: "1rem 0" }}>
+    <div style={{ padding: '1rem 0' }}>
       <h2>
         <Api />
       </h2>
