@@ -3,6 +3,7 @@
  * It allows navigation between different routes based on the selected tab.
  */
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Box as JBox } from '@mui/joy';

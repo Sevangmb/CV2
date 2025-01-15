@@ -30,9 +30,9 @@ class Api extends React.Component {
   render() {
     const { data } = this.state;
     // Map over the data array and render each item.
-    const result = (data || []).map((item, id) => (
-      <div key={`api-${id}`}>
-        <span># {id} # </span>
+    const result = (data || []).map((item) => (
+      <div key={`api-${item.id}`}>
+        <span># {item.id} # </span>
         <br />
 
         <span>Titre : {item.title}</span>
@@ -42,8 +42,8 @@ class Api extends React.Component {
         <br />
 
         {/* Render a Chip for each cast member */}
-        {item.cast.map((castDetail, stackId) => (
-          <Stack key={`api-${stackId}`} direction="row" spacing={1}>
+        {item.cast.map((castDetail) => (
+          <Stack key={`api-${castDetail}`} direction="row" spacing={1}>
             <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
