@@ -1,4 +1,6 @@
 import * as React from 'react';
+import connectDB from '../dbConfig';
+import ResumeModel from '../models/ResumeModel';
 import Chip from '@mui/material/Chip';
 import FaceIcon from '@mui/icons-material/Face';
 import Stack from '@mui/material/Stack';
@@ -19,6 +21,7 @@ class Api extends React.Component {
 
   componentDidMount() {
     // Fetch data from the API when the component mounts.
+    connectDB();
     const that = this;
     const apiUrl =
       'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/cv-xfzvw/service/cv/incoming_webhook/api?secret=cv';
@@ -27,6 +30,19 @@ class Api extends React.Component {
       .then((json) => {
         // Update the state with the fetched data.
         that.setState({ data: json });
+        json.forEach(async (item) => {
+          const resume = new ResumeModel({
+            title: item.title,
+            cast: item.cast,
+            runtime: item.runtime.$numberInt,
+          });
+          try {
+            await resume.save();
+            console.log('Data saved to database');
+          } catch (error) {
+            console.error('Error saving data to database:', error);
+          }
+        });
       });
   }
 
