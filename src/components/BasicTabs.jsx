@@ -31,12 +31,26 @@ export default function BasicTabsComponent(props) {
       }}
     >
       <JBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          sx={{
+            padding: '0 20px',
+            backgroundColor: '#f0f0f0',
+          }}
+        >
           {tabs.map((tab, index) => (
             <Tab
               key={tab.url}
               label={tabs[index].title}
-              id={`simple-tab-${index}`}
+              sx={{
+                fontSize: '1rem',
+                color: '#333',
+                '&.Mui-selected': {
+                  color: '#4f8a8b',
+                },
+              }}
               aria-controls={`simple-tabpanel-${index}`}
             />
           ))}

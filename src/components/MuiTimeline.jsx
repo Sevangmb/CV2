@@ -17,14 +17,13 @@ import Typography from '@mui/material/Typography';
 
 export default function CustomizedTimeline() {
   return (
-    <Timeline position="alternate">
+    <Timeline position="alternate" sx={{ bgcolor: '#e0f7fa', py: 4 }}>
       <TimelineItem>
         {/* Timeline item for the "Eat" event */}
         <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
+          sx={{ m: 'auto 0', color: '#00796b' }}
           align="right"
           variant="body2"
-          color="text.secondary"
         >
           9:30 am
         </TimelineOppositeContent>
@@ -35,11 +34,11 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '16px', px: 3 }}>
+          <Typography variant="h5" component="span" color="primary">
             Eat
           </Typography>
-          <Typography>Because you need strength</Typography>
+          <Typography variant="body1" color="text.secondary">Because you need strength</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -54,11 +53,11 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '16px', px: 3 }}>
+          <Typography variant="h5" component="span" color="primary">
             Code
           </Typography>
-          <Typography>Because it&apos;s awesome!</Typography>
+          <Typography variant="body1" color="text.secondary">Because it&apos;s awesome!</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -70,11 +69,11 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '16px', px: 3 }}>
+          <Typography variant="h5" component="span" color="primary">
             Sleep
           </Typography>
-          <Typography>Because you need rest</Typography>
+          <Typography variant="body1" color="text.secondary">Because you need rest</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -86,11 +85,11 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '16px', px: 3 }}>
+          <Typography variant="h5" component="span" color="primary">
             Repeat
           </Typography>
-          <Typography>Because this is the life you love!</Typography>
+          <Typography variant="body1" color="text.secondary">Because this is the life you love!</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
