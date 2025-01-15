@@ -1,3 +1,7 @@
+/**
+ * CustomizedTimeline is a React component that renders a timeline using Material-UI components.
+ * It visually represents a sequence of events with icons and descriptions.
+ */
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -15,6 +19,7 @@ export default function CustomizedTimeline() {
   return (
     <Timeline position="alternate">
       <TimelineItem>
+        {/* Timeline item for the "Eat" event */}
         <TimelineOppositeContent
           sx={{ m: 'auto 0' }}
           align="right"
@@ -38,6 +43,7 @@ export default function CustomizedTimeline() {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
+        {/* Timeline item for the "Code" event */}
         <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
           10:00 am
         </TimelineOppositeContent>
@@ -56,6 +62,7 @@ export default function CustomizedTimeline() {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
+        {/* Timeline item for the "Sleep" event */}
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot color="primary" variant="outlined">
@@ -71,6 +78,7 @@ export default function CustomizedTimeline() {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
+        {/* Timeline item for the "Repeat" event */}
         <TimelineSeparator>
           <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
           <TimelineDot color="secondary">

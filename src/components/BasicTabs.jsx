@@ -1,3 +1,7 @@
+/* 
+ * BasicTabsComponent is a React component that renders a set of tabs using Material-UI components.
+ * It allows navigation between different routes based on the selected tab.
+ */
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -11,9 +15,9 @@ export default function BasicTabsComponent(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newTabIndex) => {
-    event.preventDefault();
-    setValue(newTabIndex);
-    navigate(tabs[newTabIndex].url, { replace: true });
+    event.preventDefault(); // Prevent default anchor behavior
+    setValue(newTabIndex); // Update the state with the new tab index
+    navigate(tabs[newTabIndex].url, { replace: true }); // Navigate to the URL of the selected tab
   };
 
   return (
