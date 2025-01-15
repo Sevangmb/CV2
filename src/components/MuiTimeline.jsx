@@ -9,89 +9,58 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
+import BuildIcon from '@mui/icons-material/Build';
 import Typography from '@mui/material/Typography';
 
 export default function CustomizedTimeline() {
+  const resumeData = [
+    { type: 'work', date: 'Jan 2020 - Present', title: 'Software Engineer', description: 'Developing web applications.' },
+    { type: 'education', date: '2015 - 2019', title: 'Bachelor of Science', description: 'Major in Computer Science.' },
+    { type: 'skills', date: '', title: 'Skills', description: 'JavaScript, React, Node.js' },
+  ];
+
+  const getIcon = (type) => {
+    switch (type) {
+      case 'work':
+        return <WorkIcon />;
+      case 'education':
+        return <SchoolIcon />;
+      case 'skills':
+        return <BuildIcon />;
+      default:
+        return <RepeatIcon />;
+    }
+  };
+
   return (
-    <Timeline position="alternate" sx={{ bgcolor: 'background.default', py: 4 }}>
-      <TimelineItem>
-        {/* Timeline item for the "Eat" event */}
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0', color: '#00796b' }}
-          align="right"
-          variant="body2"
-        >
-          9:30 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: 2, px: 3 }}>
-          <Typography variant="h5" component="span" color="primary">
-            Eat
-          </Typography>
-          <Typography variant="body1" color="text.secondary">Because you need strength</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        {/* Timeline item for the "Code" event */}
-        <TimelineOppositeContent sx={{ m: 'auto 0', color: 'text.secondary' }} align="right" variant="body2">
-          10:00 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="primary">
-            <LaptopMacIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: 2, px: 3 }}>
-          <Typography variant="h5" component="span" color="primary">
-            Code
-          </Typography>
-          <Typography variant="body1" color="text.secondary">Because it&apos;s awesome!</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        {/* Timeline item for the "Sleep" event */}
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="primary" variant="outlined">
-            <HotelIcon />
-          </TimelineDot>
-          <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: 2, px: 3 }}>
-          <Typography variant="h5" component="span" color="primary">
-            Sleep
-          </Typography>
-          <Typography variant="body1" color="text.secondary">Because you need rest</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        {/* Timeline item for the "Repeat" event */}
-        <TimelineSeparator>
-          <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-          <TimelineDot color="secondary">
-            <RepeatIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: 2, px: 3 }}>
-          <Typography variant="h5" component="span" color="primary">
-            Repeat
-          </Typography>
-          <Typography variant="body1" color="text.secondary">Because this is the life you love!</Typography>
-        </TimelineContent>
-      </TimelineItem>
+    <Timeline position="alternate">
+      {resumeData.map((item, index) => (
+        <TimelineItem key={index}>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            align="right"
+            variant="body2"
+            color="text.secondary"
+          >
+            {item.date}
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot color="primary">
+              {getIcon(item.type)}
+            </TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant="h6" component="span">
+              {item.title}
+            </Typography>
+            <Typography>{item.description}</Typography>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
     </Timeline>
   );
 }
