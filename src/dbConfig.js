@@ -1,5 +1,6 @@
 // src/dbConfig.js
 
+
 import mongoose from 'mongoose';
 
 // Define the MongoDB connection string
