@@ -36,6 +36,8 @@ class Api extends React.Component {
           try {
             await resume.save();
           } catch (error) {
+            console.error('Error saving resume:', error);
+          }
         });
       });
   }
