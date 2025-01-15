@@ -17,7 +17,7 @@ import Typography from '@mui/material/Typography';
 
 export default function CustomizedTimeline() {
   return (
-    <Timeline position="alternate" sx={{ bgcolor: '#e0f7fa', py: 4 }}>
+    <Timeline position="alternate" sx={{ bgcolor: 'background.default', py: 4 }}>
       <TimelineItem>
         {/* Timeline item for the "Eat" event */}
         <TimelineOppositeContent
@@ -34,7 +34,7 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '16px', px: 3 }}>
+        <TimelineContent sx={{ py: 2, px: 3 }}>
           <Typography variant="h5" component="span" color="primary">
             Eat
           </Typography>
@@ -43,7 +43,7 @@ export default function CustomizedTimeline() {
       </TimelineItem>
       <TimelineItem>
         {/* Timeline item for the "Code" event */}
-        <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
+        <TimelineOppositeContent sx={{ m: 'auto 0', color: 'text.secondary' }} align="right" variant="body2">
           10:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -53,7 +53,7 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '16px', px: 3 }}>
+        <TimelineContent sx={{ py: 2, px: 3 }}>
           <Typography variant="h5" component="span" color="primary">
             Code
           </Typography>
@@ -69,7 +69,7 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '16px', px: 3 }}>
+        <TimelineContent sx={{ py: 2, px: 3 }}>
           <Typography variant="h5" component="span" color="primary">
             Sleep
           </Typography>
@@ -85,7 +85,7 @@ export default function CustomizedTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '16px', px: 3 }}>
+        <TimelineContent sx={{ py: 2, px: 3 }}>
           <Typography variant="h5" component="span" color="primary">
             Repeat
           </Typography>

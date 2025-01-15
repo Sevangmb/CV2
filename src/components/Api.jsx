@@ -34,27 +34,15 @@ class Api extends React.Component {
     const { data } = this.state;
     // Map over the data array and render each item.
     const result = (data || []).map((item) => (
-      <Card key={`api-${item.id}`} sx={{ marginBottom: 2, backgroundColor: '#f9f9f9' }}>
-        <CardContent>
-          <Typography variant="h6" component="div">
-            # {item.id} #
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Titre : {item.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Casting : {item.cast.join(', ')}
-          </Typography>
-          {item.cast.map((castDetail) => (
-            <Stack key={`api-${castDetail}`} direction="row" spacing={1}>
-              <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
-            </Stack>
-          ))}
-          <Typography variant="body2" color="text.secondary">
-            Diffusé {item.runtime.$numberInt} fois
-          </Typography>
-        </CardContent>
-      </Card>
+      <div key={`api-${item.id}`}>
+        <span># {item.id} # </span>
+        <br />
+        {item.cast.map((castDetail) => (
+          <Stack key={`api-${item.id}-${castDetail}`} direction="row" spacing={1}>
+            <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
+          </Stack>
+        ))}
+      </div>
     ));
     return result;
   }
