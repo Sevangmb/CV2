@@ -2,9 +2,9 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import customTheme from './customTheme';
 import BasicTabs from './components/BasicTabs';
-import About from './routes/about';
-import Expenses from './routes/expenses';
-import Invoices from './routes/invoices';
+import About from './routes/About';
+import Expenses from './routes/Expenses';
+import Invoices from './routes/Invoices';
 
 export default function App() {
   const tabsDefinition = [

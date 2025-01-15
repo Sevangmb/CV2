@@ -1,7 +1,6 @@
-import { deepmerge } from '@mui/utils';
 import { experimental_extendTheme as extendMuiTheme } from '@mui/material/styles';
 
-const muiTheme = extendMuiTheme({
+const customTheme = extendMuiTheme({
   palette: {
     background: {
       default: '#f4f6ff',
@@ -28,5 +27,4 @@ const muiTheme = extendMuiTheme({
     ].join(','),
   },
 });
-const customTheme = deepmerge(muiTheme);
 export default customTheme;

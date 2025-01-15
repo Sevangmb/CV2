@@ -20,13 +20,16 @@ class Api extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         that.setState({ data: json });
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
       });
   }
 
   render() {
     const { data } = this.state;
     const result = (data || []).map((item, id) => (
-      <div key={`api-${id}`}>
+      <div key={`api-item-${id}`}>
         <span># {id} # </span>
         <br />
 
@@ -37,12 +40,12 @@ class Api extends React.Component {
         <br />
 
         {item.cast.map((castDetail, stackId) => (
-          <Stack key={`api-${stackId}`} direction="row" spacing={1}>
+          <Stack key={`api-cast-${stackId}`} direction="row" spacing={1}>
             <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
 
-        <span key="{item.runtime.$numberInt}">Diffusé {item.runtime.$numberInt} fois</span>
+        <span>Diffusé {item.runtime.$numberInt} fois</span>
       </div>
     ));
     return result;
