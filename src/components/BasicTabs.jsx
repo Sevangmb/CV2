@@ -5,7 +5,7 @@ import Tab from '@mui/material/Tab';
 import { Box as JBox } from '@mui/joy';
 import { useNavigate } from 'react-router-dom';
 
-export default function BasicTabs(props) {
+export default function BasicTabsComponent(props) {
   const { tabs } = props;
 
   const navigate = useNavigate();

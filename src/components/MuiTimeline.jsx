@@ -1,4 +1,4 @@
-import Timeline from '@mui/lab/Timeline';
+import TimelineComponent from '@mui/lab/TimelineComponent';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';

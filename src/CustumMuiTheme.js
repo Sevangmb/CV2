@@ -1,6 +1,6 @@
 import { experimental_extendTheme as extendMuiTheme } from '@mui/material/styles';
 
-const CustumMuiTheme = extendMuiTheme({
+const CustomMuiTheme = extendMuiTheme({
   palette: {
     background: {
       default: '#f4f6ff',
@@ -27,4 +27,4 @@ const CustumMuiTheme = extendMuiTheme({
     ].join(','),
   },
 });
-export default CustumMuiTheme;
+export default CustomMuiTheme;
