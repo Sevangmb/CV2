@@ -12,13 +12,29 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 import BuildIcon from '@mui/icons-material/Build';
+import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 
 export default function CustomizedTimeline() {
   const resumeData = [
-    { type: 'work', date: 'Jan 2020 - Present', title: 'Software Engineer', description: 'Developing web applications.' },
-    { type: 'education', date: '2015 - 2019', title: 'Bachelor of Science', description: 'Major in Computer Science.' },
-    { type: 'skills', date: '', title: 'Skills', description: 'JavaScript, React, Node.js' },
+    {
+      type: 'work',
+      date: 'Jan 2020 - Present',
+      title: 'Software Engineer',
+      description: 'Developing web applications.',
+    },
+    {
+      type: 'education',
+      date: '2015 - 2019',
+      title: 'Bachelor of Science',
+      description: 'Major in Computer Science.',
+    },
+    {
+      type: 'skills',
+      date: '',
+      title: 'Skills',
+      description: 'JavaScript, React, Node.js',
+    },
   ];
 
   const getIcon = (type) => {
@@ -36,8 +52,8 @@ export default function CustomizedTimeline() {
 
   return (
     <Timeline position="alternate">
-      {resumeData.map((item, index) => (
-        <TimelineItem key={index}>
+      {resumeData.map((item) => (
+        <TimelineItem key={item.title}>
           <TimelineOppositeContent
             sx={{ m: 'auto 0' }}
             align="right"
