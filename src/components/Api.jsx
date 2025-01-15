@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import FaceIcon from '@mui/icons-material/Face';
@@ -25,9 +24,9 @@ class Api extends React.Component {
 
   render() {
     const { data } = this.state;
-    const result = (data || []).map((item, id) => (
-      <div key={`api-${id}`}>
-        <span># {id} # </span>
+    const result = (data || []).map((item) => (
+      <div key={`api-${item.runtime.$numberInt}`}>
+        <span># {item.runtime.$numberInt} # </span>
         <br />
 
         <span>Titre : {item.title}</span>
@@ -36,8 +35,8 @@ class Api extends React.Component {
         <span>Casting : {item.cast}</span>
         <br />
 
-        {item.cast.map((castDetail, stackId) => (
-          <Stack key={`api-${stackId}`} direction="row" spacing={1}>
+        {item.cast.map((castDetail) => (
+          <Stack key={`api-${castDetail}`} direction="row" spacing={1}>
             <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
