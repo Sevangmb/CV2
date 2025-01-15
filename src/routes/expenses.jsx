@@ -6,9 +6,7 @@ export default function Expenses() {
   return (
     <Card sx={{ padding: '1rem 0', marginBottom: 2 }}>
       <CardContent>
-        <h2>
-          <Api />
-        </h2>
+        <Api />
       </CardContent>
     </Card>
   );

@@ -60,6 +60,15 @@ export default function BasicTabsComponent(props) {
   );
 }
 
+BasicTabs.propTypes = {
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
 BasicTabsComponent.propTypes = {
   tabs: PropTypes.arrayOf(
     PropTypes.shape({

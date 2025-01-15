@@ -37,6 +37,22 @@ const muiTheme = extendMuiTheme({
       fontSize: '2rem',
       fontWeight: 500,
     },
+    h3: {
+      fontSize: '1.75rem',
+      fontWeight: 500,
+    },
+    h4: {
+      fontSize: '1.5rem',
+      fontWeight: 500,
+    },
+    h5: {
+      fontSize: '1.25rem',
+      fontWeight: 500,
+    },
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 500,
+    },
     body1: {
       fontSize: '1rem',
       lineHeight: 1.5,
@@ -47,6 +63,15 @@ const muiTheme = extendMuiTheme({
       styleOverrides: {
         root: {
           borderRadius: '8px',
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          borderRadius: '12px',
         },
       },
     },

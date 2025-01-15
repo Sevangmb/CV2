@@ -1,4 +1,5 @@
-import { experimental_extendTheme as extendMuiTheme } from '@mui/material/styles';
+import { experimental_extendTheme as extendMuiTheme
+ } from '@mui/material/styles';
 
 const CustomMuiTheme = extendMuiTheme({
   palette: {

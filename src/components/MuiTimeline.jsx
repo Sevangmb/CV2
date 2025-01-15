@@ -16,28 +16,11 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 
 export default function CustomizedTimeline() {
-  const resumeData = [
-    {
-      type: 'work',
-      date: 'Jan 2020 - Present',
-      title: 'Software Engineer',
-      description: 'Developing web applications.',
-    }
-,
-    {
-      type: 'education',
-      date: '2015 - 2019',
-      title: 'Bachelor of Science',
-      description: 'Major in Computer Science.',
-    }
-,
-    {
-      type: 'skills',
-      date: '',
-      title: 'Skills',
-      description: 'JavaScript, React, Node.js',
-    }
-,
+  const timelineData = [
+    { type: 'work', time: '9:30 am', title: 'Work', description: 'Start working on projects.' },
+    { type: 'education', time: '10:00 am', title: 'Study', description: 'Learn new skills.' },
+    { type: 'skills', time: '11:00 am', title: 'Practice', description: 'Hone your skills.' },
+    { type: 'repeat', time: '12:00 pm', title: 'Repeat', description: 'Continue the cycle.' },
   ];
 
   const getIcon = (type) => {
@@ -51,44 +34,35 @@ export default function CustomizedTimeline() {
       default:
         return <RepeatIcon />;
     }
-
-  }
-;
+  };
 
   return (
     <Timeline position="alternate">
-      {resumeData.map((item) => (
-        <TimelineItem key={item.title}
->
+      {timelineData.map((item, index) => (
+        <TimelineItem key={index}>
           <TimelineOppositeContent
-            sx={{ m: 'auto 0' }
-}
-
+            sx={{ m: 'auto 0' }}
             align="right"
             variant="body2"
             color="text.secondary"
           >
-            {item.date}
-
+            {item.time}
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot color="primary" variant="outlined"><HotelIcon /></TimelineDot>
+            <TimelineDot color="primary" variant="outlined">
+              {getIcon(item.type)}
+            </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: '12px', px: 2 }
-}
->
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
               {item.title}
-
             </Typography>
-            <Typography>{item.description}
-</Typography>
+            <Typography>{item.description}</Typography>
           </TimelineContent>
         </TimelineItem>
       ))}
-
     </Timeline>
   );
 }
