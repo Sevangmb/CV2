@@ -1,4 +1,4 @@
-/* 
+/*
  * BasicTabsComponent is a React component that renders a set of tabs using Material-UI components.
  * It allows navigation between different routes based on the selected tab.
  */
