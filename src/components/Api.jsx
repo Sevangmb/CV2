@@ -1,12 +1,9 @@
 import * as React from 'react';
-import connectDB from '../dbConfig';
-import ResumeModel from '../models/ResumeModel';
 import Chip from '@mui/material/Chip';
 import FaceIcon from '@mui/icons-material/Face';
 import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import connectDB from '../dbConfig';
+import ResumeModel from '../models/ResumeModel.js';
 
 // The Api component fetches data from a remote API and displays it using Material-UI components.
 
@@ -38,10 +35,7 @@ class Api extends React.Component {
           });
           try {
             await resume.save();
-            console.log('Data saved to database');
           } catch (error) {
-            console.error('Error saving data to database:', error);
-          }
         });
       });
   }

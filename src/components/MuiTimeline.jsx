@@ -22,19 +22,22 @@ export default function CustomizedTimeline() {
       date: 'Jan 2020 - Present',
       title: 'Software Engineer',
       description: 'Developing web applications.',
-    },
+    }
+,
     {
       type: 'education',
       date: '2015 - 2019',
       title: 'Bachelor of Science',
       description: 'Major in Computer Science.',
-    },
+    }
+,
     {
       type: 'skills',
       date: '',
       title: 'Skills',
       description: 'JavaScript, React, Node.js',
-    },
+    }
+,
   ];
 
   const getIcon = (type) => {
@@ -48,35 +51,44 @@ export default function CustomizedTimeline() {
       default:
         return <RepeatIcon />;
     }
-  };
+
+  }
+;
 
   return (
     <Timeline position="alternate">
       {resumeData.map((item) => (
-        <TimelineItem key={item.title}>
+        <TimelineItem key={item.title}
+>
           <TimelineOppositeContent
-            sx={{ m: 'auto 0' }}
+            sx={{ m: 'auto 0' }
+}
+
             align="right"
             variant="body2"
             color="text.secondary"
           >
             {item.date}
+
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot color="primary">
-              {getIcon(item.type)}
-            </TimelineDot>
+            <TimelineDot color="primary" variant="outlined"><HotelIcon /></TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <TimelineContent sx={{ py: '12px', px: 2 }
+}
+>
             <Typography variant="h6" component="span">
               {item.title}
+
             </Typography>
-            <Typography>{item.description}</Typography>
+            <Typography>{item.description}
+</Typography>
           </TimelineContent>
         </TimelineItem>
       ))}
+
     </Timeline>
   );
 }

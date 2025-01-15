@@ -57,8 +57,8 @@ export default function BasicTabsComponent(props) {
         </Tabs>
       </JBox>
     </JBox>
-  )
-};
+  );
+}
 
 BasicTabsComponent.propTypes = {
   tabs: PropTypes.arrayOf(
