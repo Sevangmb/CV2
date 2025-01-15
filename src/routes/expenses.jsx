@@ -1,11 +1,15 @@
 import Api from '../components/Api';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export default function Expenses() {
   return (
-    <div style={{ padding: '1rem 0' }}>
-      <h2>
-        <Api />
-      </h2>
-    </div>
+    <Card sx={{ padding: '1rem 0', marginBottom: 2 }}>
+      <CardContent>
+        <h2>
+          <Api />
+        </h2>
+      </CardContent>
+    </Card>
   );
 }

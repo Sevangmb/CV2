@@ -2,6 +2,9 @@ import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import FaceIcon from '@mui/icons-material/Face';
 import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
 // The Api component fetches data from a remote API and displays it using Material-UI components.
 
@@ -31,25 +34,27 @@ class Api extends React.Component {
     const { data } = this.state;
     // Map over the data array and render each item.
     const result = (data || []).map((item) => (
-      <div key={`api-${item.id}`}>
-        <span># {item.id} # </span>
-        <br />
-
-        <span>Titre : {item.title}</span>
-        <br />
-
-        <span>Casting : {item.cast}</span>
-        <br />
-
-        {/* Render a Chip for each cast member */}
-        {item.cast.map((castDetail) => (
-          <Stack key={`api-${castDetail}`} direction="row" spacing={1}>
-            <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
-          </Stack>
-        ))}
-
-        <span key="{item.runtime.$numberInt}">Diffusé {item.runtime.$numberInt} fois</span>
-      </div>
+      <Card key={`api-${item.id}`} sx={{ marginBottom: 2, backgroundColor: '#f9f9f9' }}>
+        <CardContent>
+          <Typography variant="h6" component="div">
+            # {item.id} #
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Titre : {item.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Casting : {item.cast.join(', ')}
+          </Typography>
+          {item.cast.map((castDetail) => (
+            <Stack key={`api-${castDetail}`} direction="row" spacing={1}>
+              <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
+            </Stack>
+          ))}
+          <Typography variant="body2" color="text.secondary">
+            Diffusé {item.runtime.$numberInt} fois
+          </Typography>
+        </CardContent>
+      </Card>
     ));
     return result;
   }
