@@ -23,9 +23,6 @@ class Api extends React.Component {
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
       });
   }
 
@@ -42,8 +39,8 @@ class Api extends React.Component {
         <span>Casting : {item.cast}</span>
         <br />
 
-        {item.cast.map((castDetail) => (
-          <Stack key={`cast-${castDetail}`} direction="row" spacing={1}>
+        {item.cast.map((castDetail, index) => (
+          <Stack key={`cast-${index}-${castDetail}`} direction="row" spacing={1}>
             <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
