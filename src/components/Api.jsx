@@ -23,6 +23,9 @@ class Api extends React.Component {
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
       });
   }
 
