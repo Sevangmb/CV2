@@ -20,6 +20,9 @@ class Api extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         that.setState({ data: json });
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
       });
   }
 
@@ -36,8 +39,8 @@ class Api extends React.Component {
         <span>Casting : {item.cast}</span>
         <br />
 
-        {item.cast.map((castDetail, stackId) => (
-          <Stack key={`api-${stackId}`} direction="row" spacing={1}>
+        {item.cast.map((castDetail) => (
+          <Stack key={`cast-${castDetail}`} direction="row" spacing={1}>
             <Chip size="small" icon={<FaceIcon />} label={castDetail} variant="outlined" />
           </Stack>
         ))}
